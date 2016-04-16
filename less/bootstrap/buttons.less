@@ -1,0 +1,55 @@
+.btn {
+	line-height: 1;
+	text-transform: uppercase;
+	border: none;
+	outline: none;
+	
+	&:focus {
+		//outline: none;
+		color: inherit;
+	}
+
+	&:active {
+		outline: none;
+	}
+
+	&:hover, &:active {
+		box-shadow: inset 0 3px 7px 0 rgba(0, 0, 0, .35);
+	}
+	
+	&-blue {
+		color: white;
+		background-color: @brand-blue;
+		
+		&:hover, &:active {
+			color: white;
+			background-color: @brand-dark-blue;
+		}
+	}
+
+	&-white {
+		color: @brand-blue;
+		background: white;
+		
+		&:hover, &:active {
+			color: @brand-blue;		
+		}
+	}
+
+	&-label {
+		background: #E0E0E0;
+		color: @brand-dark-gray;
+		width: 160px;
+		
+		&:hover, &:active {
+			color: white;
+			background: #B3B3B3;
+		}
+
+		&.active {
+			background: @brand-blue;
+			color: white;
+			box-shadow: none;
+		}
+	}
+}

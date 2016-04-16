@@ -1,0 +1,51 @@
+.text-light {
+	font-weight: 300;
+}
+
+.text-bold {
+	font-weight: 700;
+}
+
+.text-black {
+	font-weight: 900;
+}
+
+.text-regular {
+	font-weight: 400;
+}
+
+.white {
+	color: white;
+}
+
+.blue {
+	color: @brand-blue;
+}
+
+.black {
+	color: black;
+}
+
+.dark-gray {
+	color: @brand-dark-gray;
+}
+
+.heading-decor {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 2px;
+	margin: 33px auto 0;
+}
+
+.h-d-gray {
+	&:after:extend(.heading-decor) {
+		background: @brand-gray;
+	}
+}
+
+.h-d-white {
+	&:after:extend(.heading-decor) {
+		background: white;
+	}
+}
