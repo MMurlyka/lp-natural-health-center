@@ -39,7 +39,11 @@
 	&-label {
 		background: #E0E0E0;
 		color: @brand-dark-gray;
-		width: 160px;
+		width: 110px;
+		
+		@media (min-width: @screen-lg-min) {
+			width: 160px;
+		}
 		
 		&:hover, &:active {
 			color: white;

@@ -1,4 +1,5 @@
 @import "spritesmith/sprite.less";
+@import "bootstrap/variables.less";
 
 @font-face {
 	font-family: "Myriad Pro";
@@ -24,12 +25,18 @@ body {
 @brand-gray: #C6C6C6;
 
 .main {
-	height: 700px;
+	min-height: 700px;
 	padding-top: 138px;
+	padding-bottom: 20px;
 	background: #A89EAC url(../images/bg-main.jpg) top center no-repeat;
+	background-size: cover;
 	
 	h1 {
 		margin-bottom: 42px;
+		
+		@media (max-width: (@screen-sm-min - 1px)) {
+			font-size: 40px;
+		}
 	}
 
 	p {
@@ -48,8 +55,13 @@ body {
 
 	.item {
 		display: inline-block;
+		
 		margin-bottom: 60px;
 		text-align: center;
+		
+		@media (min-width: @screen-lg-min) {
+			width: auto;
+		}
 		
 		&:hover {
 			.front-side {
@@ -66,6 +78,11 @@ body {
 			transition: all 1s;
 			width: 160px;
 			height: 180px;
+
+			@media(min-width: @screen-lg-min) {
+				width: 160px;
+				height: 180px;
+			}
 
 			&:before {
 				content: "";
@@ -114,18 +131,47 @@ body {
 			}
  		}
 	}
+	
+	.wrapp-item {
+
+		@media (min-width: @screen-lg-min) {
+			&:nth-of-type(1),
+			&:nth-of-type(2) {
+				text-align: left;
+			}
+
+			&:nth-of-type(3) {
+				text-align: center;
+			}
+
+			&:nth-of-type(4),
+			&:nth-of-type(5) {
+				text-align: right;
+			}
+		}
+	}
+
+	.crow, .lrow, .rrow, .jrow, .row {
+		@media (max-width: (@screen-lg-min - 1px)) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
 }
 
 .work {
-	height: 758px;
+	min-height: 758px;
 	padding-top: 92px;
+	padding-bottom: 30px;
 	background: #152832  url(../images/bg-work.jpg) top center no-repeat;
+	background-size: cover;
 	
 	h2 {
 		margin-bottom: 57px;
 	}
 
 	.item {
+		min-height: 180px;
 		margin-bottom: 48px;
 		line-height: 28px;
 		
@@ -140,6 +186,13 @@ body {
 			font-size: 16px;
 		}
 	}
+
+	.crow, .lrow, .rrow, .jrow, .row {
+		@media (max-width: (@screen-lg-min - 1px)) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
 }
 
 .fit-in {
@@ -151,6 +204,7 @@ body {
 	}
 
 	.item {
+		min-height: 140px;
 		margin-bottom: 50px;
 	}
 
@@ -162,34 +216,56 @@ body {
 		font-size: 16px;
 		line-height: 28px;
 	}
+
+	.crow, .lrow, .rrow, .jrow, .row {
+		@media (max-width: (@screen-lg-min - 1px)) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
 }
 
 .advantages {
-	height: 725px;
+	min-height: 725px;
 	padding-top: 103px;
-	background: #f0f0f0 url(../images/bg-advantages.jpg) top center no-repeat;
+	padding-bottom: 30px;
+	background: #e2e2e2;
 	
+	@media (min-width: @screen-sm-min) {
+		background: #f0f0f0 url(../images/bg-advantages.jpg) top center no-repeat;
+		background-size: cover;
+	}
+
 	h2 {
 		margin-bottom: 90px;
 	}
 
 	.item {
+		min-height: 180px;
 		margin-bottom: 64px;
 		
 		&-1 {
-			padding-left: 10px;
+			@media (min-width: @screen-lg-min) {
+				padding-left: 10px;
+			}
 		}
 
 		&-2 {
-			padding-right: 20px;
+			@media (min-width: @screen-lg-min) {
+				padding-right: 20px;
+			}
 		}
 
 		&-3 {
-			padding-left: 20px;
+			@media (min-width: @screen-lg-min) {
+				padding-left: 20px;
+			}
 		}
 
 		&-4 {
-			padding-right: 10px;
+			@media (min-width: @screen-lg-min) {
+				padding-right: 10px;
+			}
 		}
 	}
 
@@ -201,12 +277,22 @@ body {
 	.desc {
 		line-height: 28px;
 	}
+
+	.crow, .lrow, .rrow, .jrow, .row {
+		@media (max-width: (@screen-lg-min - 1px)) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
 }
 
 .condition {
 	min-height: 730px;
 	padding-top: 93px;
-	background: white url(../images/bg-condition.jpg) bottom center no-repeat;
+	
+	@media (min-width: @screen-sm-min) {
+		background: white url(../images/bg-condition.jpg) bottom center no-repeat;
+	}
 	
 	h2 {
 		margin-bottom: 33px;
@@ -231,12 +317,21 @@ body {
 		letter-spacing: 0.9px;
 		line-height: 24px;
 	}
+
+	.crow, .lrow, .rrow, .jrow, .row {
+		@media (max-width: (@screen-sm-min - 1px)) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
 }
 
 .how {
-	height: 685px;
+	min-height: 685px;
 	padding-top: 92px;
+	padding-bottom: 30px;
 	background: #e5e8ec url(../images/bg-how.jpg) top center no-repeat;
+	background-size: cover;
 	
 	h2 {
 		margin-bottom: 59px;
@@ -259,18 +354,29 @@ body {
 	}
 	
 	.first {
-		padding-left: 25px;
+		@media (min-width: @screen-sm-min) {
+			padding-left: 25px;
+		}
 	}
 
 	.btn {
 		width: 300px;
 	}
+
+	.crow, .lrow, .rrow, .jrow, .row {
+		@media (max-width: (@screen-sm-min - 1px)) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
 }
 
 .reviews {
-	height: 866px;
+	min-height: 866px;
 	padding-top: 92px;
+	padding-bottom: 30px;
 	background: #2A292F url(../images/bg-reviews.jpg) top center no-repeat;
+	background-size: cover;
 	
 	h2 {
 		margin-bottom: 55px;
@@ -288,16 +394,23 @@ body {
 
 	.desc {
 		position: relative;
-		padding: 0 70px;
+		padding: 0;
 		text-align: left;
 		font-size: 18px;
 		letter-spacing: 0.2px;
 		line-height: 24px;
 		color: @brand-light-gray;
 		
+		@media (min-width: @screen-sm-min) {
+			padding: 0 70px;
+		}
+		
+
 		&:before, &:after {
-			content: "";
-			position: absolute;
+			@media (min-width: @screen-sm-min) {
+				content: "";
+				position: absolute;
+			}
 		}
 
 		&:before {
@@ -325,7 +438,11 @@ body {
 .not-fit {
 	padding-top: 93px;
 	padding-bottom: 35px;
-	background: #FFF url(../images/bg-not-fit.jpg) bottom center no-repeat;
+	
+	@media (min-width: @screen-sm-min) {
+		background: #FFF url(../images/bg-not-fit.jpg) bottom center no-repeat;
+	}
+
 	h2 {
 		margin-bottom: 60px;
 	}
@@ -341,11 +458,19 @@ body {
 	.desc {
 		line-height: 28px;
 	}
+
+	.crow, .lrow, .rrow, .jrow, .row {
+		@media (max-width: (@screen-sm-min - 1px)) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+	}
 }
 
 .finish {
-	height: 412px;
+	min-height: 412px;
 	padding-top: 100px;
+	padding-bottom: 30px;
 	background: @brand-blue;
 	
 	h2 {
@@ -367,7 +492,10 @@ body {
 	li {
 		width: 20px;
 		height: 40px;
-		margin: 0 25px;
+		margin: 0 10px;
+		@media (min-width: @screen-sm-min) {
+			margin: 0 25px;
+		}
 	}
 
 	li button {
@@ -404,11 +532,29 @@ body {
 	height: 60px;
 	
 	.item {
-		padding: 15px 45px;
+		padding: 5px 15px;
 		font-size: 18px;
 		line-height: 24px;
 		color: @brand-gray;
 		letter-spacing: 1px;
+		
+		@media (min-width: @screen-sm-min) {
+			padding: 15px 45px;
+		}
+	}
+	.item-1,
+	.item-2 {
+		text-align: center;
+	}
+
+	@media (min-width: @screen-sm-min) {
+		.item-1 {
+			text-align: right;
+		}
+
+		.item-2 {
+			text-align: left;
+		}
 	}
 
 	a {
@@ -425,7 +571,7 @@ body {
 }
 
 .worksheet {
-	width: 760px;
+	width: 100%;
 	padding: 33px 0 39px;
 	margin: auto;
 	-webkit-border-radius: 10px;
@@ -433,12 +579,19 @@ body {
 	background: #F3F3F3;
 	overflow: hidden;
 	
+	@media (min-width: @screen-sm-min) {
+		width: 760px;
+	}
+	
 	h2 {
 		margin-bottom: 40px;
 	}
 
 	.form {
-		margin: 0 -380px;
+		
+		@media (min-width: @screen-sm-min) {
+			margin: 0 -380px;
+		}
 	}
 
 	input {
@@ -520,7 +673,6 @@ body {
 }
 
 .popup {
-	width: 760px;
 	padding: 35px;
 	margin: auto;
 	-webkit-border-radius: 10px;
@@ -528,6 +680,10 @@ body {
 	background: @brand-blue;
 	color: white;
 	
+	@media (min-width: @screen-sm-min) {
+		width: 760px;
+	}
+
 	h2 {
 		margin-bottom: 25px;
 		font-size: 25px;
